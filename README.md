@@ -1,4 +1,4 @@
-# Ejercicio 1 del módulo 4 - "Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (6.ª ed.)"
+# Ejercicio 1 del módulo 5 - "Desarrollo en HTML5, CSS y Javascript de Apps Web, Android, IOS... (6.ª ed.)"
 
 <strong>JQuery calculator<br></strong>
 <strong>Calculadora en JQuery</strong>
