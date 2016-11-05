@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculAITOR.exe JQuery</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<style>
+	.button5 {
+		background-color: white;
+		color: black;
+		border: 2px solid #555555;
+		width: 180px;
+	}
+
+	.button5:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+    .button2 {
+		background-color: white;
+		color: black;
+		border: 2px solid #555555;
+		width: 180px;
+	}
+
+	.button2:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+	.button3 {
+		background-color: #FFE4B5;
+		color: black;
+		border: 2px solid #555555;
+		width: 117px;
+	}
+
+	.button3:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+	.button1 {
+		background-color: #ffddda;
+		color: black;
+		border: 2px solid #555555;
+		width: 55px;
+	}
+
+	.button1:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+	.button2 {
+		background-color: #fffaca;
+		color: black;
+		border: 2px solid #555555;
+		width: 55px;
+	}
+
+	.button2:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+	.button4 {
+		background-color: #90EE90;
+		color: black;
+		border: 2px solid #555555;
+		width: 55px;
+	}
+
+	.button4:hover {
+		background-color: #555555;
+		color: white;
+	}
+	
+	.button6 {
+		background-color: #B0C4DE;
+		color: black;
+		border: 2px solid #555555;
+		width: 55px;
+	}
+
+	.button6:hover {
+		background-color: #555555;
+		color: white;
+	}
+	</style>
+
+<script type="text/javascript" src="jquery-2.1.4.min.js">
+</script>
+
+</head>
+
+<body background="img/background2.jpg">
+<script type="text/javascript">
+	//Function CUADRADO
+	$(function() {
+		$("#num").on("click", 
+			function(){ $("#num").val("");}
+		);
+		$("#cuadrado").on("click", 
+			function() {
+				var num = $("#num");
+				num.val(num.val() * num.val());
+		  }
+		);
+		//Function INVERSO
+		$("#inverso").on("click", 
+			function() {
+				var num = $("#num");
+				num.val(1 / num.val());
+		  }
+		);
+		//Function SQRT
+		$("#sqrt").on("click", 
+			function() {
+				var num = $("#num");
+				num.val(Math.sqrt(num.val()));
+		  }
+		);
+		//Function PARTE ENTERA
+		$("#pentera").on("click", 
+			function() {
+				var num = $("#num");
+				//alert(num.val());
+				if(num.val()>0){
+					num.val((Math.floor(num.val())));	
+				}else if(num.val()<0){
+					num.val((-Math.ceil(num.val())));	
+				}
+		  }
+		);
+		
+		//Function ROUND UP
+		$("#roundup").on("click", 
+			function() {
+				var num = $("#num");
+				//alert(num.val());
+				num.val(Math.ceil(num.val()));
+		  }
+		);
+		
+		//Function 2N
+		$("#dosnum").on("click", function() {
+			var num = $("#num"); 
+			num.val(Math.pow(2, num.val())); 
+		});
+	});
+	
+	 
+	
+	//Function CALCULAR
+    function calcular() {
+		var num = $('#num');
+			if (op === "e") {
+				num.value = Math.pow(+acc,+num.value)
+			}else if (op === "^") { 
+				num.val(Math.pow(+acc, +num.val())); 
+			}
+	}
+	
+	//Function BOTON C
+	$(document).ready(function(e) {
+    $('#1,#2,#3,#4,#5,#6,#7,#8,#9,#0').click(function(){
+		var v = $(this).val();
+		$('#num').val($('#num').val() + v);	
+	});
+	$('#C').click(function(){
+		$('#num').val('');
+		$('#operation').val('');
+		$('#operation').removeClass('activeAnswer');
+		$('#igual').attr('onclick','');
+		//Pequeña trampa para la function POTENCIA x^y
+		location.reload();
+	});
+	
+	//Function SUMA
+	$('#suma').click(function(e) { 
+	
+		if($('#num').val() == ''){
+			return false;
+			$('#igual').attr('onclick','');
+		}
+		else if ( $('#operation').attr('class') == 'activeAnswer') {
+			$('#operation').val( $('#operation').val() + $('#suma').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+		else{
+			$('#operation').val( $('#operation').val() + $('#num').val() + $('#suma').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+    });
+	
+	//Function RESTA
+	$('#resta').click(function(e) { 
+	
+		if($('#num').val() == ''){
+			return false;	
+			$('#igual').attr('onclick','');
+		}
+		else if ( $('#operation').attr('class') == 'activeAnswer') {
+			$('#operation').val( $('#operation').val() + $('#resta').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+		else{
+			$('#operation').val( $('#operation').val() + $('#num').val() + $('#resta').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+    });
+	
+	//Function DIVIDIR
+	$('#dividir').click(function(e) { 
+	
+		if($('#num').val() == ''){
+			return false;	
+			$('#igual').attr('onclick','');
+		}
+		else if ( $('#operation').attr('class') == 'activeAnswer') {
+			$('#operation').val( $('#operation').val() + $('#dividir').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+		else{
+			$('#operation').val( $('#operation').val() + $('#num').val() + $('#dividir').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+    });
+	
+	//Function MULTIPLICAR
+	$('#multiplicar').click(function(e) { 
+	
+		if($('#num').val() == ''){
+			return false;	
+			$('#igual').attr('onclick','');
+		}
+		else if ( $('#operation').attr('class') == 'activeAnswer') {
+			$('#operation').val( $('#operation').val() + $('#multiplicar').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+		else{
+			$('#operation').val( $('#operation').val() + $('#num').val() + $('#multiplicar').val() );
+			$('#num').val('');
+			$('#igual').attr('onclick','');
+		}
+    });	
+	
+	//Function IGUAL
+	$('#igual').click(function(){
+		if($('#igual').attr('onclick') != 'return false'){
+		
+			var a = $('#num').val();
+			var b = $('#operation').val();
+			var c = b.concat(a);
+			$('#num').val(eval(c));
+			$('#operation').val(eval(c));
+			$('#operation').addClass('activeAnswer');
+			$('#igual').attr('onclick','return false');
+		
+		}
+	});
+	
+	//Function FACTORIAL
+	$("#facto").on("click", function() {
+		var num = $("#num");
+		num.val(factorial(+num.val())); 
+	});
+	
+	function factorial(n) {
+		if (n === 0) 
+		  return 1;
+		else
+		  return (n * factorial(n-1));
+	}
+	
+	//Function POTENCIA x^y
+	 $("#potencia2").on("click", function() {
+		var num = $("#num"); 
+		acc = num.val();  
+		op = "^"; 
+		
+		$('#num').val('');
+	 });
+	 
+	 //Function SUMATORIO
+	 $("#sumatorio").on("click", 
+      function() {
+        var n = 0, res = 0;
+        var valores = $("#num").val().split(",");
+          while (n < valores.length) res += +valores[n++]; 
+          $("#num").val(res);
+      });
+       
+	//Function PRODUCTO
+    $("#producto").on("click", 
+      function() { 
+        var valores = $("#num").val().split(","), n = 0, res = 1;
+          while (n < valores.length) res *= +valores[n++]; 
+          $("#num").val(res);
+      });
+	
+	  //MSG de Bienvenida
+	  var name = "Aitor Javier Santaeugenia Marí";
+	  var fecha = new Date();
+	  var msj;
+
+	  if      (fecha.getHours() < 7)  { msj = "Buenas noches ";}
+	  else if (fecha.getHours() < 12) { msj = "Buenos días";}
+	  else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+	  else                            { msj = "Buenas noches";}
+
+	  document.getElementById("h1").innerHTML    = msj + "," + "<br> " + name + "<br> " + "<br> ";
+	  document.getElementById("fecha").innerHTML = fecha;
+	
+});
+
+    
+
+
+</script>
+	<div class="w3-container" style="text-align: CENTER;">
+	<p> <h3 id="h1"><strong></strong></h3>
+	<strong><font color="green">JQuery code this time!</strong>	</p></font>
+		<div class="w3-container" style="
+										   border-radius: 25px;
+										   border: 2px solid #73AD21;
+										   ">
+		  <br>
+		  
+		  <!-- BOTONES NÚMEROS -->
+		  <!-- AITOR NANO, mírate esto y acabalo, has de conseguir escribir los números y gl -->
+		  </p>
+		  
+		  <table class="w3-light-grey " style="   position: relative;
+										   padding:10px;
+										   left: 35%;
+										   border-radius: 25px;
+										   border: 2px solid #73AD21;">
+		  <!-- INICIO DE BOTONES
+		  Hemos realizado una tabla para que parezca más una calculadora ordinaria, que no un simple ejercicio
+		  con botones y un textbox -->
+			  <input type="hidden" id="operation" value=""/>
+			  <tr>
+				<th class="tg-031e" colspan = 5>calculAITOR.exe<p>
+				<input type="text" size="27" id="num" name="num"><p></th>
+			  </tr>
+			  <tr>
+				<td class="tg-yw4l"><button class="button button2" id="suma" value="+">+</button></td>
+				<td class="tg-yw4l"><button class="button button2" id="resta" value="-">-</button></td>
+				<td class="tg-yw4l"><button class="button button2" id="multiplicar" value="*">*</button></td>
+				<td class="tg-yw4l"><button class="button button2" id="dividir" value="/">/</button></td>
+				<td class="tg-yw4l"> <button class="button button2" id="potencia2">x<sup>y</sup></button></td>
+			  </tr>
+			  <tr>
+				<td class="tg-yw4l"><button class="button button1" value="5" id="5">5</button></td>
+				<td class="tg-yw4l"> <button class="button button1" value="6" id="6">6</button></td>
+				<td class="tg-yw4l"> <button class="button button1" value="7" id="7">7</button></td>
+				<td class="tg-yw4l"><button class="button button1" value="8" id="8">8</button></td>
+				<td class="tg-yw4l"><button class="button button1" value="9" id="9">9</button></td>
+			  </tr>
+			  <tr>
+			  	<td class="tg-yw4l"> <button class="button button1" value="0" id="0">0</button></td>
+				<td class="tg-yw4l"> <button class="button button1" value="1" id="1">1</button></td>
+				<td class="tg-yw4l"><button class="button button1" value="2" id="2">2</button></td>
+				<td class="tg-yw4l"><button class="button button1" value="3" id="3">3</button></td>
+				<td class="tg-yw4l"><button class="button button1" value="4" id="4">4</button></td>
+			  </tr>
+			  <tr>
+				<td class="tg-yw4l"><button class="button button4" id="inverso" value=" "> 1/x </button>  </td>
+				<td class="tg-yw4l"><button class="button button4" id="sqrt"> √ </button> </td>
+				<td class="tg-yw4l"><button class="button button4" id="dosnum"> 2<sup>n</sup> </button> </td>
+				<td class="tg-yw4l"><button class="button button4" id="pentera"> INT </button> </td>
+				<td class="tg-yw4l"><button class="button button4" id="roundup"> UP </button></td>
+			  </tr>
+			  <tr>
+				<td class="tg-yw4l"> <button class="button button4" id="facto">n!</button></td>
+				<td class="tg-yw4l"><button class="button button4" id="cuadrado">x<sup>2</sup></button></td>
+				<td class="tg-yw4l"> <button class="button button6" id="sumatorio">∑x</button></td>
+				<td class="tg-yw4l"> <button class="button button6" id="producto">∏</button></td>
+			  </tr>
+			  <tr>
+				<td class="tg-yw4l" colspan="2"> <button class="button button3" id="C"> <font color="red"><strong>C</strong></font> </button></td>
+				
+				<td class="tg-yw4l" colspan="2"> <button class="button button3" id="igual" onClick="calcular()">=</button>	</td>
+			  </tr>
+		</table><br>
+		<button class="button button5" target="popup" style="text-align: center;" onclick="window.open('list_done4.html','Lista_ejercicios','width=600,height=800')"> Lista ejercicios </button>
+		<br><br><br>
+		</div>
+	<div>
+</body>
+
+</html>

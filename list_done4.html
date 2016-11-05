@@ -1,0 +1,362 @@
+
+<br><br>
+<ul>
+	<hr style="height:8px; color: black; background-color: black;" />
+	<ol>
+	<h3>Qu&eacute; se ha realizado:</h3></ol>
+	<li><strike>“Buenos días, bienvenido a la calculadora de &lt;nombre y apellido de la persona&gt;”</strike></li>
+	<li> <strike>Operaciones unitarias (con un solo operando):</strike> </li>
+	<ol>
+		<li> <strike>x^2 (número elevado al cuadrado)</strike></li>
+		<li><strike>1/x (inverso del número) </li>
+		<li> sqrt(x) (raiz cuadrada del número)  </li>
+		<li> parte_entera(x) (parte entera de x: si x es positivo devuelve Math.floor(x) y si es negativo devuelve -Math.ceil(x)) </li>
+		<li> 2^n (potencia n del número 2) </li>
+		<li> n! (factorial del número n: n*(n-1)*(n-2)*...*3*2*1) </strike></li>
+	</ol>
+	<li><strike>Operaciones binarias (con dos operandos):</strike></li>
+	<ol>
+		<li><strike>+. -. *, / (suma, resta, multiplicación y división)</strike></li>
+		<li> <strike>x^y (x elevado a y) </li>
+	</ol>
+	<li>Operaciones con n operandos introducidos en formato CSV:</li>
+	<ol>
+		<li> sumatorio(x) (sumatorio de n números) </li>
+		<li> producto(x) (producto de n números) </strike></li>
+	</ol>
+	<li>Subir dicha aplicación a la cuenta de neocities.org</li><br>
+	<hr style="height:8px; color: black; background-color: black;" />
+</ul>
+
+<ul><ol><h3>D&oacutende ha sido utilizado</h3></ol>
+	<li><strong>Mensaje de bienvenida:</strong><br>
+	<strong><font color="red">Línia 309</font> del documento calculAitor.exe para el JQuery</strong> y 329 para el HTML<br>
+	<i>
+	<pre>
+	<font color="green"> //MSG de Bienvenida </font>
+	  <font color="blue">var</font> name = <font color="gray">"Aitor Javier Santaeugenia Marí"</font>;
+	  <font color="blue">var</font> fecha =<font color="blue">new</font> Date();
+	  <font color="blue">var</font> msj;
+
+	  <font color="blue">if</font>      (fecha.getHours() < <font color="red">7</font>)  { msj = <font color="gray">"Buenas noches "</font>;}
+	  <font color="blue">else if</font> (fecha.getHours() < <font color="red">12</font>) { msj = <font color="gray">"Buenos días"</font>;}
+	  <font color="blue">else if</font> (fecha.getHours() < <font color="red">21</font>) { msj = <font color="gray">"Buenas tardes"</font>;}
+	  <font color="blue">else</font>                            { msj = <font color="gray">"Buenas noches"</font>;}
+
+	  document.getElementById(<font color="gray">"h1"</font>).innerHTML    = msj + <font color="gray">","</font> + <font color="gray">"&lt;br&gt; "</font> + name + <font color="gray">"&lt;br&gt; "</font> + <font color="gray">"&lt;br&gt; "</font>;
+	  document.getElementById(<font color="gray">"fecha"</font>).innerHTML = fecha;
+	  <br>
+	  <font color="blue">&lt;p&gt; &lt;h3</font> <font color="red">id</font>=<font color="#800080">"h1"</font><font color="blue">&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/h3&gt;</font>
+	</pre>
+	</i>
+	</li>
+	<li> <strong>Operaciones unitarias (con un solo operando): </strong><br></li>
+	<ol>
+		<li> 
+		<strong>x^2 - CUADRADO</strong><br>
+		<font color="red"><strong>Función en línia 100</strong></font>, botón en línia 384 del documento calculAitor.exe <br>
+		 <i>
+		 <pre>
+		<font color="green">//Function CUADRADO </font>
+		$(<font color="gray">"#cuadrado"</font>).on(<font color="gray">"click"</font>, 
+			<font color="blue">function()</font> {
+				<font color="blue">var</font> num = $(<font color="gray">"#num"</font>);
+				num.val(num.val() * num.val());
+		  }
+		);
+		 </pre>
+		 
+		 </i>
+		</li><br>
+		<li> 
+		<strong>1/x - INVERSO</strong><br>
+		<font color="red"><strong>Función en línia 178</strong></font>, botón en línia 257 del documento calculAitor.exe <br> 
+		<i><pre>
+		<font color="green">//Function INVERSO</font>
+		$(<font color="gray">"#inverso"</font>).on(<font color="gray">"click"</font>, 
+			<font color="blue">function()</font> {
+				<font color="blue">var</font> num = $(<font color="gray">"#num"</font>);
+				num.val(<font color="red">1</font> / num.val());
+		  }
+		);
+		</pre></i>
+		</li><br>
+		<li> 
+		<strong>Sqrt(x) - RAÍZ</strong><br>
+		<font color="red"><strong>Función en línia 118</strong></font>, botón en línia 377 del documento calculAitor.exe <br> 
+		<i>
+		<pre>
+		<font color="green">//Function SQRT</font>
+		$(<font color="gray">"#sqrt"</font>).on(<font color="gray">"click"</font>, 
+			function() {
+				<font color="blue">var</font> num = $(<font color="gray">"#num"</font>);
+				num.val(Math.sqrt(num.val()));
+		  }
+		);
+		</pre>		
+		</i>
+		</li><br>
+		<li> 
+		<strong>PARTE_ENTERA(x)</strong><br>
+		<font color="red"><strong>Función en línia 125</strong></font>, botón en línia 379 del documento calculAitor.exe <br> 
+		<i>
+		<pre>
+		<font color="green">//Function PARTE ENTERA</font>
+		$(<font color="gray">"#pentera"</font>).on(<font color="gray">"click"</font>, 
+			function() {
+				var num = $(<font color="gray">"#num"</font>);
+				<font color="green">//alert(num.val());</font>
+				<font color="blue">if</font>(num.val()><font color="red">0</font>){
+					num.val((Math.floor(num.val())));	
+				}<font color="blue">else if</font>(num.val()<<font color="red">0</font>){
+					num.val((-Math.ceil(num.val())));	
+				}
+		  }
+		);
+		</pre>
+		</i>
+		</li>
+	<li> 
+		<strong> 2^n (POTENCIA N del nº 2)</strong><br>
+		<font color="red"><strong>Función en línia 147</strong></font>, botón en línia 379 del documento calculAitor.exe <br> 
+		<i>
+		<pre>
+		<font color="green">//Function 2N</font>
+		$(<font color="gray">"#dosnum"</font>).on(<font color="gray">"click"</font>, <font color="blue">function()</font> {
+			<font color="blue">var</font> num = $(<font color="gray">"#num"</font>); 
+			num.val(Math.pow(<font color="red">2</font>, num.val())); 
+		});
+		</pre>
+		</i>
+	</li>
+	
+	<li> 
+		<strong> n! (factorial del número n: n*(n-1)*(n-2)*...*3*2*1)</strong><br>
+		<font color="red"><strong>Función en línia 147</strong></font>, botón en línia 384 del documento calculAitor.exe <br> 
+		<i>
+		<pre>
+		<font color="green">//Function FACTORIAL</font>
+		$(<font color="gray">"#facto"</font>).on(<font color="gray">"click"</font>, <font color="blue">function()</font> {
+			<font color="blue">var</font> num = $(<font color="gray">"#num"</font>);
+			num.val(factorial(+num.val())); 
+		});
+		
+		<font color="blue">function</font> factorial(n) {
+			<font color="blue">if</font> (n === <font color="red">0</font>) 
+			  return <font color="red">1</font>;
+			<font color="blue">else</font>
+			  return (n * factorial(n-<font color="red">1</font>));
+		}
+		</pre>
+		</i>
+	</li>
+	</ol>
+	
+	
+	
+	<li><strong>Operaciones binarias (con dos operandos):</strong></li>
+	<ol>
+		<li> <strong>SUMA</strong><br>
+		<font color="red"><strong>Función en línia 180</strong></font>, botón en línia 356 del documento calculAitor.exe <br>
+		
+		<i><font color="green">//Function SUMAR</font><br>
+		<pre>
+		<font color="green">//Function SUMA</font>
+		$(<font color="gray">'#suma'</font>).click(<font color="blue">function</font>(e) { 
+	
+		<font color="blue">if</font>($(<font color="gray">'#num'</font>).val() == <font color="gray">''</font>){
+			return <font color="blue">false;</font>
+			$(<font color="gray">'#igual'</font>).attr('onclick','');
+		}
+		<font color="blue">else if</font> ( $(<font color="gray">'#operation'</font>).attr(<font color="gray">'class'</font>) == <font color="gray">'activeAnswer'</font>) {
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#suma'</font>).val() );
+			$(<font color="gray">'#num'</font>).val('');
+			$(<font color="gray">'#igual'</font>).attr('onclick','');
+		}
+		<font color="blue">else</font>{
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#num'</font>).val() + $(<font color="gray">'#suma'</font>).val() );
+			$(<font color="gray">'#num'</font>).val('');
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		});
+		</pre>
+		</i><br><br>
+		
+		<strong>RESTA</strong><br>
+		<font color="red"><strong>Función en línia 199</strong></font>, botón en línia 357 del documento calculAitor.exe <br>
+		<i>
+		<pre>
+		<font color="green">//Function RESTA</font>
+		$(<font color="gray">'#resta'</font>).click(<font color="blue">function</font>(e) { 
+	
+		<font color="blue">if</font>($(<font color="gray">'#num'</font>).val() == <font color="gray">''</font>){
+			return <font color="blue">false</font>;	
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else if</font> ( $(<font color="gray">'#operation'</font>).attr(<font color="gray">'class'</font>) == <font color="gray">'activeAnswer'</font>) {
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#resta'</font>).val() );
+			$(<font color="gray">'#num'</font>).val(<font color="gray">''</font>);
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else</font>{
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#num'</font>).val() + $(<font color="gray">'#resta'</font>).val() );
+			$(<font color="gray">'#num'</font>).val('');
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		});
+		</pre>
+		</i>
+		
+		<br><strong>MULTIPLICACIÓN</strong><br>
+		<font color="red"><strong>Función en línia 237</strong></font>, botón en línia 358 del documento calculAitor.exe <br>
+		<i>
+		<pre>
+		<font color="green">//Function MULTIPLICAR</font>
+		$(<font color="gray">'#multiplicar'</font>).click(function(e) { 
+	
+		<font color="blue">if</font>($(<font color="gray">'#num'</font>).val() == <font color="gray">''</font>){
+			return <font color="blue">false </font>;	
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else if</font> ( $(<font color="gray">'#operation'</font>).attr(<font color="gray">'class'</font>) == <font color="gray">'activeAnswer'</font>) {
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#multiplicar'</font>).val() );
+			$(<font color="gray">'#num'</font>).val(<font color="gray">''</font>);
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else</font>{
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#num'</font>).val() + $(<font color="gray">'#multiplicar'</font>).val() );
+			$(<font color="gray">'#num'</font>).val(<font color="gray">''</font>);
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		});	
+		</pre>
+		</i>
+		
+		<br><strong>DIVISIÓN</strong><br>
+		<font color="red"><strong>Función en línia 218</strong></font>, botón en línia 359 del documento calculAitor.exe <br>
+		<i>
+		<pre>
+		<font color="green">//Function DIVIDIR</font>
+		$(<font color="gray">'#dividir'</font>).click(<font color="blue">function</font>(e) { 
+	
+		<font color="blue">if</font>($(<font color="gray">'#num'</font>).val() == <font color="gray">''</font>){
+			return <font color="blue">false;</font>	
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else if</font> ( $(<font color="gray">'#operation'</font>).attr(<font color="gray">'class'</font>) == <font color="gray">'activeAnswer'</font>) {
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#dividir'</font>).val() );
+			$(<font color="gray">'#num'</font>).val(<font color="gray">''</font>);
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		<font color="blue">else</font>{
+			$(<font color="gray">'#operation'</font>).val( $(<font color="gray">'#operation'</font>).val() + $(<font color="gray">'#num'</font>).val() + $(<font color="gray">'#dividir'</font>).val() );
+			$(<font color="gray">'#num'</font>).val(<font color="gray">''</font>);
+			$(<font color="gray">'#igual'</font>).attr(<font color="gray">'onclick',''</font>);
+		}
+		});
+		</pre>
+		</i>
+		
+		<br>
+		<strong>  X<sup>Y</sup> (X ELEVADO Y) </strong><br>
+		<font color="red"><strong>Función en línia 284 y 360</strong></font>, botón en línia 259 del documento calculAitor.exe <br>
+		 <i>
+		 <pre>
+		<font color="green">//Function POTENCIA x^y</font>
+		$(<font color="gray">"#potencia2"</font>).on(<font color="gray">"click"</font>, <font color="blue">function()</font> {
+			var num = $(<font color="gray">"#num"</font>); 
+			acc = num.val();  
+			op = <font color="gray">"^"</font>; 
+		
+			$(<font color="gray">'#num'</font>).val('');
+		});
+		 </pre>		 
+		 </i>
+		</li>
+	</ol>
+	<li> <strong>Operaciones con n operandos introducidos en formato CSV:</li></strong>
+	<ol>
+		<li><strong> SUMATORIO(X) (sumatorio de n números)</li></strong>
+		<font color="red"><strong>Función en línia 284 y 385</strong></font>, botón en línia 259 del documento calculAitor.exe <br><br>
+		<pre>
+		<font color="green">//Function SUMATORIO</font>
+		$(<font color="gray">"#sumatorio"</font>).on(<font color="gray">"click"</font>, 
+			<font color="blue">function()</font> {
+				<font color="blue">var</font> n = <font color="red">0</font>, res = <font color="red">0</font>;
+				<font color="blue">var</font> valores = $(<font color="gray">"#num"</font>).val().split(<font color="gray">","</font>);
+					<font color="blue">while</font> (n < valores.length) res += +valores[n++]; 
+					$(<font color="gray">"#num"</font>).val(res);
+		});
+		</pre>
+		
+		<li><strong> PRODUCTO(X) (producto de n números)</li></strong>
+		<font color="red"><strong>Función en línia 302 y 386</strong></font>, botón en línia 259 del documento calculAitor.exe <br><br>
+		<pre>
+		<font color="green">//Function PRODUCTO</font>
+		$(<font color="gray">"#producto"</font>).on(<font color="gray">"click"</font>, 
+			<font color="blue">function()</font> { 
+				<font color="blue">var</font> valores = $(<font color="gray">"#num"</font>).val().split(<font color="gray">","</font>), n = <font color="red">0</font>, res = <font color="red">1</font>;
+					<font color="blue">while</font> (n < valores.length) res *= +valores[n++]; 
+					$(<font color="gray">"#num"</font>).val(res);
+		});
+		</pre>
+		
+	</ol>
+	
+	
+	
+	<li>Subir dicha aplicación a la cuenta de neocities.org -> &nbsp;&nbsp; <a href="http://santaeugenia.neocities.org/calculAitorJquery.htm" target="_blank"><font color="blue">http://santaeugenia.neocities.org/calculAitorJquery.htm</a></li></font> <br>
+	<li><strong>Extras NO OBLIGATORIOS</li></strong>
+	<OL>
+		<LI>Funcion para los botónes numéricos:
+		<pre>
+		$(document).ready(function(e) {
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#0').click(function(){
+			var v = $(this).val();
+			$('#num').val($('#num').val() + v);	
+		});
+		$('#C').click(function(){
+			$('#num').val('');
+			$('#operation').val('');
+			$('#operation').removeClass('activeAnswer');
+			$('#igual').attr('onclick','');
+			//Pequeña trampa para la function POTENCIA x^y
+			location.reload();
+		});
+		</pre>
+		</LI>
+		<LI>Funcion botón igual y botón C para borrar
+		<pre>
+		//Function IGUAL
+		$('#igual').click(function(){
+			if($('#igual').attr('onclick') != 'return false'){
+			
+				var a = $('#num').val();
+				var b = $('#operation').val();
+				var c = b.concat(a);
+				$('#num').val(eval(c));
+				$('#operation').val(eval(c));
+				$('#operation').addClass('activeAnswer');
+				$('#igual').attr('onclick','return false');
+			
+			}
+		});
+		</pre>
+		<pre>
+		//Function BOTON C
+		$(document).ready(function(e) {
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#0').click(function(){
+			var v = $(this).val();
+			$('#num').val($('#num').val() + v);	
+		});
+		$('#C').click(function(){
+			$('#num').val('');
+			$('#operation').val('');
+			$('#operation').removeClass('activeAnswer');
+			$('#igual').attr('onclick','');
+			//Pequeña trampa para la function POTENCIA x^y
+			location.reload();
+		});
+		</pre>
+	</OL>
+</ul>
